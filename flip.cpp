@@ -7,14 +7,17 @@ using namespace std;
 
 int main(){
 
-  int n;
+  int t;
+
+  cin>>t;
+
+  for(int i=0;i<t;i++){
+
+    int n;
   int sx;
   int q;
 
   cin>>n>>sx;
-
-
-
 
   
     int* arr = new int[n];
@@ -34,9 +37,32 @@ int main(){
 
   }
 
+ 
+
+
+int allZero = 1, allOne = 1;
+
+for (int i = 0; i < n; i++) {
+    if (arr[i] != 0) allZero = 0;
+    if (arr[i] != 1) allOne = 0;
+}
+
+int flag = allZero || allOne;
+
+// cout << "dfd"<< flag;
+
+// for (int i = 0; i < n; i++) {
+//     if (arr[i] != 0) {
+//         flag = 1;
+//         break;
+//     }
+// }
+
     int count=0;
 
-    if(arr[indx]==0){
+    if(flag==0){
+
+        if(arr[indx]==0){
       if(indx>0){
         for(int i=indx;i<n;i++){
           if(arr[i]==0){
@@ -89,11 +115,28 @@ int main(){
 
     }
 
-    // for(int i=0;i<n;i++){
-    //   cout<<arr[i];
-    // }
+    }
 
-    cout<<count;
+    
+
+  
+
+    if(count!=0){
+
+      cout<<count+1;
+
+    }
+    else{
+      cout<<count;
+    }
+
+
+    
+    cout<<endl;
+
+  }
+
+  
 
      
     return 0;
