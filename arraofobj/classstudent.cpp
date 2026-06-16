@@ -11,19 +11,7 @@ class Student
 	        int marks;
 };
 
-bool cmp(Student p,Student q){
-    if(p.marks > q.marks){
-        return true;
-    }
-    else if(p.marks==q.marks){
-        if(p.roll < q.roll){
-            return true;
-        }
-    }
-    else {
-        return false;
-    }
-}
+
 
 int main(){
 
@@ -37,7 +25,7 @@ int main(){
         cin>>arrofobj[i].name>>arrofobj[i].roll>>arrofobj[i].marks;
     }
 
-    sort(arrofobj,arrofobj+n,cmp);
+   
 
      for(int i=0;i<n;i++){
         cout<<arrofobj[i].name<<arrofobj[i].roll<<arrofobj[i].marks<<endl;
