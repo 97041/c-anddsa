@@ -30,14 +30,28 @@ int main(){
     // Ignore the leftover newline character from std::cin
     cin.ignore(); 
 
-    vector<std::string> stringArray;
+    vector<std::string> stringArray2;
 
     
     for (int i = 0; i < numberof2; i++) {
         string currentInput;
         
        getline(cin, currentInput); 
-        stringArray.push_back(currentInput);
+        stringArray2.push_back(currentInput);
+    }
+
+    int count = 0;
+
+    for(int i=0;i<numberof2;i++){
+       for(int j=0;j<numberOfInputs;j++){
+
+        if(stringArray2[i]==stringArray[j]){
+            count++;
+         }
+
+       }
+       cout<<count<<endl;
+       count=0;
     }
 
 
