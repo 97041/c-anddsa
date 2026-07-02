@@ -40,32 +40,31 @@ int main(){
    }
    else{
 
+    int case1min = INT_MAX;
+
         for(int i=0;i<n;i++){
 
-            int cost;
-         
-            if(arr[i]%2==0){
+             int c1 = (4-(arr[i]%4))%4;
+        case1min = min(case1min, c1);
 
-                cost = 0;
-
-            }
-            else{
-                cost = 1;
-            }
-
-            holderarr[i]=cost;
+        int c2 = arr[i]%2;
+        holderarr[i]=c2;
       
    }
 
    sort(holderarr,holderarr+n);
 
-   if(k==4){
-   minval= holderarr[0]+holderarr[1];
-   }
+   
+   int case2min= holderarr[0]+holderarr[1];
 
-   cout<<minval<<endl;
+   minval = min(case1min, case2min);
+ 
+
+  
 
 }
+
+ cout<<minval<<endl;
 
     }
     
